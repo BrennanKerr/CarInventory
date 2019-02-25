@@ -1,0 +1,146 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CustomerList
+</name>
+</assembly>
+<members>
+<member name="T:CustomerList.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:CustomerList.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:CustomerList.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:CustomerList.Customer.#ctor">
+ <summary>
+ Constructor - Default - creates a new customer object
+ </summary>
+</member>
+<member name="M:CustomerList.Customer.#ctor(System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ Constructor - Parameterized - creates a new customer object
+ </summary>
+ <param name="title"></param>
+ <param name="firstName"></param>
+ <param name="lastName"></param>
+ <param name="veryImportantPersonStatus"></param>
+</member>
+<member name="P:CustomerList.Customer.Count">
+ <summary>
+ Count ReadOnly Property - Gets the number of customers that have been instantiated/created
+ </summary>
+ <returns>Integer</returns>
+</member>
+<member name="P:CustomerList.Customer.IdentificationNumber">
+ <summary>
+ IdentificationNumber ReadOnly Property - Gets a specific customers identification number
+ </summary>
+ <returns>Integer</returns>
+</member>
+<member name="P:CustomerList.Customer.VeryImportantPersonStatus">
+ <summary>
+ VeryImportantPersonStatus Property - >Gets and Sets the Very Important Person status of a customer
+ </summary>
+ <returns>Boolean</returns>
+</member>
+<member name="P:CustomerList.Customer.Title">
+ <summary>
+ Title property - Gets and Sets the title of a customer
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="P:CustomerList.Customer.FirstName">
+ <summary>
+ FirstName property - Gets and Sets the first name of a customer
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="P:CustomerList.Customer.LastName">
+ <summary>
+ LastName property - Gets and Sets the last name of a customer
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="M:CustomerList.Customer.GetSalutation">
+ <summary>
+ GetSalutation is a function that a salutation based on the private properties within the class scope
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="T:CustomerList.frmCustomerList">
+ <summary>
+ Author Name:    Alfred Massardo
+ Project Name:   CustomerList
+ Date:           05-Jan-2018
+ Description     Application to keep a list of customers and a little information that describes their importance.
+ </summary>
+</member>
+<member name="M:CustomerList.frmCustomerList.btnEnter_Click(System.Object,System.EventArgs)">
+ <summary>
+ btnEnter_Click - Will validate that the data entered into the controls is appropriate.
+                - Once the data is validated a customer object will be create using the  
+                - parameterized constructor. It will also insert the new customer object
+                - into the customerList collection. It will also check to see if the data in
+                - the controls has been selected from the listview by the user. In that case
+                - it will need to update the data in the specific customer object and the 
+                - listview as well.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">EventArgs</param>
+</member>
+<member name="M:CustomerList.frmCustomerList.Reset">
+ <summary>
+ Reset - set the controls back to their default state.
+ </summary>
+</member>
+<member name="M:CustomerList.frmCustomerList.IsValidInput">
+ <summary>
+ IsValidInput - validates the data in each control to ensure that the user has entered apprpriate values
+ </summary>
+ <returns>Boolean</returns>
+</member>
+<member name="M:CustomerList.frmCustomerList.btnReset_Click(System.Object,System.EventArgs)">
+ <summary>
+ Event is declared as private because it is only accessible within the form
+ The code in the btnReset_Click EventHandler will clear the form and set
+ focus back to the input text box. 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:CustomerList.frmCustomerList.btnExit_Click(System.Object,System.EventArgs)">
+ <summary>
+ Event is declared as private because it is only accessible within the form
+ The code in the btnExit_Click EventHandler will close the application
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:CustomerList.frmCustomerList.lvwCustomers_ItemCheck(System.Object,System.Windows.Forms.ItemCheckEventArgs)">
+ <summary>
+ lvwCustomers_ItemCheck - used to prevent the user from checking the check box in the list view
+                        - if it is not in edit mode
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:CustomerList.frmCustomerList.lvwCustomers_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ lvwCustomers_SelectedIndexChanged - when the user selected a row in the list it will populate the fields for editing
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+</members>
+</doc>
