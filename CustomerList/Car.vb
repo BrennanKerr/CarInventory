@@ -5,8 +5,8 @@
 Option Strict On
 
 Public Class Car
-	Private Shared carCount As Integer = 0
-	Private myCarNumber As Integer = 0
+	Private Shared carCount As Integer
+	Private myCarNumber As Integer
 	Private myMake As String = String.Empty
 	Private myModel As String = String.Empty
 	Private myYear As Integer = 0
@@ -56,7 +56,7 @@ Public Class Car
 
 	Public ReadOnly Property IdentificationNumber() As Integer
 		Get
-			Return IdentificationNumber
+			Return myCarNumber
 		End Get
 	End Property
 
@@ -83,10 +83,10 @@ Public Class Car
 
 	Public Property Model() As String
 		Get
-			Return myMake
+			Return myModel
 		End Get
 		Set(value As String)
-			myMake = value
+			myModel = value
 		End Set
 	End Property
 
@@ -109,7 +109,7 @@ Public Class Car
 		End Set
 	End Property
 
-	Public Function GetSalutaion() As String
+	Public Function GetSalutation() As String
 		Return "It Worked"
 	End Function
 End Class

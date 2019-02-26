@@ -97,7 +97,7 @@ Partial Class frmCustomerList
 		'
 		Me.cmbMakes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cmbMakes.FormattingEnabled = True
-		Me.cmbMakes.Items.AddRange(New Object() {"Mr.", "Mrs.", "Miss.", "Ms.", "Mstr.", "Dr."})
+		Me.cmbMakes.Items.AddRange(New Object() {"Chevrolet", "Dodge", "Ford"})
 		Me.cmbMakes.Location = New System.Drawing.Point(84, 7)
 		Me.cmbMakes.Name = "cmbMakes"
 		Me.cmbMakes.Size = New System.Drawing.Size(121, 21)

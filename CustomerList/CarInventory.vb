@@ -14,18 +14,14 @@ Public Class frmCustomerList
 	Private currentCarNumber As String = String.Empty   ' the current car that is selected
 	Private editMode As Boolean = False                                 '
 
-    ''' <summary>
-    ''' btnEnter_Click - Will validate that the data entered into the controls is appropriate.
-    '''                - Once the data is validated a customer object will be create using the  
-    '''                - parameterized constructor. It will also insert the new customer object
-    '''                - into the customerList collection. It will also check to see if the data in
-    '''                - the controls has been selected from the listview by the user. In that case
-    '''                - it will need to update the data in the specific customer object and the 
-    '''                - listview as well.
-    ''' </summary>
-    ''' <param name="sender">Object</param>
-    ''' <param name="e">EventArgs</param>
-    Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
+	''' <summary>
+	''' btnEnter_Click - Validates information
+	'''                - If everything is valid, creates a new object from the Car class 
+	'''                - The object is added to the carList
+	''' </summary>
+	''' <param name="sender">Object</param>
+	''' <param name="e">EventArgs</param>
+	Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
 
 		Dim car As Car            ' declare a Customer class
 		Dim carItem As ListViewItem    ' declare a ListViewItem class
@@ -43,11 +39,11 @@ Public Class frmCustomerList
             ' 
             lbResult.Text = "It worked!"
 
-			' if the current customer identification number has a no value
+			' if the current car identification number has a no value
 			' then this is not an existing item from the listview
 			If currentCarNumber.Trim.Length = 0 Then
 
-				' create a new customer object using the parameterized constructor
+				' create a new car object using the parameterized constructor
 				car = New Car(cmbMakes.Text, tbModel.Text, year, price, chkNew.Checked)
 
 				' add the customer to the customerList collection
@@ -57,12 +53,12 @@ Public Class frmCustomerList
 				carList.Add(car.IdentificationNumber.ToString(), car)
 
 			Else
-				' if the current customer identification number has a value
+				' if the current car identification number has a value
 				' then the user has selected something from the list view
-				' so the data in the customer object in the customerList collection
+				' so the data in the car object in the customerList collection
 				' must be updated
 
-				' so get the customer from the custmers collection
+				' so get the car from the cars collection
 				' using the selected key
 				car = CType(carList.Item(currentCarNumber), Car)
 
@@ -78,7 +74,7 @@ Public Class frmCustomerList
 			' clear the items from the listview control
 			lvwCustomers.Items.Clear()
 
-			' loop through the customerList collection
+			' loop through the carList collection
 			' and populate the list view
 			For Each carEntry As DictionaryEntry In carList
 
@@ -102,29 +98,6 @@ Public Class frmCustomerList
 				lvwCustomers.Items.Add(carItem)
 
 			Next carEntry
-
-			' Alternate looping strategy
-			'For index As Integer = 0 To customerList.Count - 1
-
-			'    ' instantiate a new ListViewItem
-			'    customerItem = New ListViewItem()
-
-			'    ' get the customer from the list
-			'    customer = CType(customerList(customerList.GetKey(index)), Customer)
-
-			'    ' assign the values to the ckecked control
-			'    ' and the subitems
-			'    customerItem.Checked = customer.VeryImportantPersonStatus
-			'    customerItem.SubItems.Add(customer.IdentificationNumber.ToString())
-			'    customerItem.SubItems.Add(customer.Title)
-			'    customerItem.SubItems.Add(customer.FirstName)
-			'    customerItem.SubItems.Add(customer.LastName)
-
-			'    ' add the new instantiated and populated ListViewItem
-			'    ' to the listview control
-			'    lvwCustomers.Items.Add(customerItem)
-
-			'Next index
 
 			' clear the controls
 			Reset()
@@ -162,32 +135,32 @@ Public Class frmCustomerList
 		Dim returnValue As Boolean = True
 		Dim outputMessage As String = String.Empty
 
-		' check if the title has been selected
+		' check if the make has been selected
 		If cmbMakes.SelectedIndex = -1 Then
 
 			' If not set the error message
-			outputMessage += "Please select the customer's title." & vbCrLf
+			outputMessage += "Please select the car's make." & vbCrLf
 
 			' And, set the return value to false
 			returnValue = False
 
 		End If
 
-		' check if the first name has been entered
+		' check if the model is valid
 		If tbModel.Text.Trim.Length = 0 Then
 
 			' If not set the error message
-			outputMessage += "Please enter the customer's first name." & vbCrLf
+			outputMessage += "Please enter the car's model." & vbCrLf
 
 			' And, set the return value to false
 			returnValue = False
 
 		End If
 
-		' check if the year is valid
+		' check if the year has been selected
 		If cmbYear.SelectedIndex = -1 Then
 			' If not set the error message
-			outputMessage += "Please select the customer's title." & vbCrLf
+			outputMessage += "Please select the car's year." & vbCrLf
 
 			' And, set the return value to false
 			returnValue = False
@@ -195,7 +168,7 @@ Public Class frmCustomerList
 
 		Dim tempPrice As Double
 
-		' check if the first name has been entered
+		' check if the price has been entered and is valid
 		If tbPrice.Text.Trim.Length = 0 Or Double.TryParse(tbPrice.Text, tempPrice) = False Then
 			' If not set the error message
 			outputMessage += "Please enter the customer's last name." & vbCrLf
@@ -280,18 +253,19 @@ Public Class frmCustomerList
 		currentCarNumber = lvwCustomers.Items(lvwCustomers.FocusedItem.Index).SubItems(identificationSubItemIndex).Text
 
 		' Use the customer identification number to get the customer from the collection object
-		Dim customer As Customer = CType(carList.Item(currentCarNumber), Customer)
+		Dim car As Car = CType(carList.Item(currentCarNumber), Car)
 
 		' set the controls on the form
-		tbModel.Text = customer.FirstName               ' get the first name and set the text box
-		tbPrice.Text = customer.LastName                 ' get the last name and set the text box
-		cmbMakes.Text = customer.Title                     ' get the title and set the combo box
-		chkNew.Checked = customer.VeryImportantPersonStatus ' get the very important person status and set the combo box
+		tbModel.Text = car.Model               ' get the first name and set the text box
+		cmbMakes.Text = car.Make                     ' get the title and set the combo box
+		cmbYear.Text = car.Year.ToString()
+		tbPrice.Text = car.Price.ToString()                 ' get the last name and set the text box
+		chkNew.Checked = car.NewStatus ' get the very important person status and set the combo box
 
-		lbResult.Text = customer.GetSalutation()
+		lbResult.Text = car.GetSalutation()
 
 
-    End Sub
+	End Sub
 
 	Private Sub frmCustomerList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

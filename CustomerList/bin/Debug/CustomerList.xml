@@ -108,13 +108,9 @@ CustomerList
 </member>
 <member name="M:CustomerList.frmCustomerList.btnEnter_Click(System.Object,System.EventArgs)">
  <summary>
- btnEnter_Click - Will validate that the data entered into the controls is appropriate.
-                - Once the data is validated a customer object will be create using the  
-                - parameterized constructor. It will also insert the new customer object
-                - into the customerList collection. It will also check to see if the data in
-                - the controls has been selected from the listview by the user. In that case
-                - it will need to update the data in the specific customer object and the 
-                - listview as well.
+ btnEnter_Click - Validates information
+                - If everything is valid, creates a new object from the Car class 
+                - The object is added to the carList
  </summary>
  <param name="sender">Object</param>
  <param name="e">EventArgs</param>
