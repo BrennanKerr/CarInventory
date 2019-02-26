@@ -22,6 +22,26 @@ CustomerList
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:CustomerList.Car.#ctor">
+ <summary>
+ Constructor - Default - creates a new customer object
+ </summary>
+</member>
+<member name="M:CustomerList.Car.#ctor(System.String,System.String,System.Int32,System.Double,System.Boolean)">
+ <summary>
+ Constructor - Parameterized - creates a new customer object
+ </summary>
+ <param name="make">The make of the vehicle</param>
+ <param name="model">The model of the vehicle</param>
+ <param name="price">The price of the vehicle</param>
+ <param name="year">The year of the vehicle</param>
+</member>
+<member name="P:CustomerList.Car.Count">
+ <summary>
+ Gets the current count
+ </summary>
+ <return>carCount</return>
+</member>
 <member name="M:CustomerList.Customer.#ctor">
  <summary>
  Constructor - Default - creates a new customer object

@@ -9,3 +9,14 @@ c:\users\paolo\documents\visual studio 2015\Projects\CustomerList\CustomerList\o
 c:\users\paolo\documents\visual studio 2015\Projects\CustomerList\CustomerList\obj\Debug\CustomerList.exe
 c:\users\paolo\documents\visual studio 2015\Projects\CustomerList\CustomerList\obj\Debug\CustomerList.xml
 c:\users\paolo\documents\visual studio 2015\Projects\CustomerList\CustomerList\obj\Debug\CustomerList.pdb
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\bin\Debug\CustomerList.exe.config
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.exe
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.xml
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.pdb
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\bin\Debug\CustomerList.exe
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\bin\Debug\CustomerList.pdb
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\bin\Debug\CustomerList.xml
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.vbprojResolveAssemblyReference.cache
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.frmCustomerList.resources
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.Resources.resources
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.vbproj.GenerateResource.Cache
