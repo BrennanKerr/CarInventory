@@ -17,6 +17,6 @@ D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\bin\Debug\
 D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\bin\Debug\CustomerList.pdb
 D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\bin\Debug\CustomerList.xml
 D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.vbprojResolveAssemblyReference.cache
-D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.frmCustomerList.resources
 D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.Resources.resources
 D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.vbproj.GenerateResource.Cache
+D:\Durham College\Semester 2\NETD 3202\Labs\CarInventory\CustomerList\obj\Debug\CustomerList.frmCarInventory.resources

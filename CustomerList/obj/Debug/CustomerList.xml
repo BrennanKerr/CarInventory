@@ -24,12 +24,12 @@ CustomerList
 </member>
 <member name="M:CustomerList.Car.#ctor">
  <summary>
- Constructor - Default - creates a new customer object
+ Constructor - Default - creates a new car object
  </summary>
 </member>
 <member name="M:CustomerList.Car.#ctor(System.String,System.String,System.Int32,System.Double,System.Boolean)">
  <summary>
- Constructor - Parameterized - creates a new customer object
+ Constructor - Parameterized - creates a new car object
  </summary>
  <param name="make">The make of the vehicle</param>
  <param name="model">The model of the vehicle</param>
@@ -41,6 +41,48 @@ CustomerList
  Gets the current count
  </summary>
  <return>carCount</return>
+</member>
+<member name="P:CustomerList.Car.IdentificationNumber">
+ <summary>
+ Returns the car identification number
+ </summary>
+ <returns>myCarNumber - The number assigned for the car</returns>
+</member>
+<member name="P:CustomerList.Car.NewStatus">
+ <summary>
+ Returns if the car is new or old
+ </summary>
+ <returns>myStatus</returns>
+</member>
+<member name="P:CustomerList.Car.Make">
+ <summary>
+ Sets or returns the make of the vehicle
+ </summary>
+ <returns>myMake</returns>
+</member>
+<member name="P:CustomerList.Car.Model">
+ <summary>
+ Sets or returns the model of the vehicle
+ </summary>
+ <returns>myModel</returns>
+</member>
+<member name="P:CustomerList.Car.Year">
+ <summary>
+ Gets or Sets the year of the vehicle
+ </summary>
+ <returns>myYear</returns>
+</member>
+<member name="P:CustomerList.Car.Price">
+ <summary>
+ Sets or gets the price of the vehicle
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:CustomerList.Car.GetSalutation">
+ <summary>
+ Displays a verification message if the vehicle was entered successfully
+ </summary>
+ <returns></returns>
 </member>
 <member name="M:CustomerList.Customer.#ctor">
  <summary>
@@ -98,15 +140,21 @@ CustomerList
  </summary>
  <returns>String</returns>
 </member>
-<member name="T:CustomerList.frmCustomerList">
- <summary>
+<member name="T:CustomerList.frmCarInventory">
+ <summary> (Initial CustomerList) - Used as baseline
  Author Name:    Alfred Massardo
  Project Name:   CustomerList
  Date:           05-Jan-2018
  Description     Application to keep a list of customers and a little information that describes their importance.
+ 
+ (New Car Inventory)
+ Author Name:	Brennan Kerr
+ Project Name:	Car Inventory
+ Date:			25-Feb-2019
+ Description:	Keeps a list of cars with information such as make, model, year, price, and if it is new
  </summary>
 </member>
-<member name="M:CustomerList.frmCustomerList.btnEnter_Click(System.Object,System.EventArgs)">
+<member name="M:CustomerList.frmCarInventory.btnEnter_Click(System.Object,System.EventArgs)">
  <summary>
  btnEnter_Click - Validates information
                 - If everything is valid, creates a new object from the Car class 
@@ -115,18 +163,18 @@ CustomerList
  <param name="sender">Object</param>
  <param name="e">EventArgs</param>
 </member>
-<member name="M:CustomerList.frmCustomerList.Reset">
+<member name="M:CustomerList.frmCarInventory.Reset">
  <summary>
  Reset - set the controls back to their default state.
  </summary>
 </member>
-<member name="M:CustomerList.frmCustomerList.IsValidInput">
+<member name="M:CustomerList.frmCarInventory.IsValidInput">
  <summary>
  IsValidInput - validates the data in each control to ensure that the user has entered apprpriate values
  </summary>
  <returns>Boolean</returns>
 </member>
-<member name="M:CustomerList.frmCustomerList.btnReset_Click(System.Object,System.EventArgs)">
+<member name="M:CustomerList.frmCarInventory.btnReset_Click(System.Object,System.EventArgs)">
  <summary>
  Event is declared as private because it is only accessible within the form
  The code in the btnReset_Click EventHandler will clear the form and set
@@ -135,7 +183,7 @@ CustomerList
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:CustomerList.frmCustomerList.btnExit_Click(System.Object,System.EventArgs)">
+<member name="M:CustomerList.frmCarInventory.btnExit_Click(System.Object,System.EventArgs)">
  <summary>
  Event is declared as private because it is only accessible within the form
  The code in the btnExit_Click EventHandler will close the application
@@ -143,7 +191,7 @@ CustomerList
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:CustomerList.frmCustomerList.lvwCustomers_ItemCheck(System.Object,System.Windows.Forms.ItemCheckEventArgs)">
+<member name="M:CustomerList.frmCarInventory.lvwCars_ItemCheck(System.Object,System.Windows.Forms.ItemCheckEventArgs)">
  <summary>
  lvwCustomers_ItemCheck - used to prevent the user from checking the check box in the list view
                         - if it is not in edit mode
@@ -151,7 +199,7 @@ CustomerList
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:CustomerList.frmCustomerList.lvwCustomers_SelectedIndexChanged(System.Object,System.EventArgs)">
+<member name="M:CustomerList.frmCarInventory.lvwCars_SelectedIndexChanged(System.Object,System.EventArgs)">
  <summary>
  lvwCustomers_SelectedIndexChanged - when the user selected a row in the list it will populate the fields for editing
  </summary>

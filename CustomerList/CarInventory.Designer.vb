@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmCustomerList
+Partial Class frmCarInventory
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -33,7 +33,7 @@ Partial Class frmCustomerList
 		Me.lbModel = New System.Windows.Forms.Label()
 		Me.lbPrice = New System.Windows.Forms.Label()
 		Me.chkNew = New System.Windows.Forms.CheckBox()
-		Me.lvwCustomers = New System.Windows.Forms.ListView()
+		Me.lvwCars = New System.Windows.Forms.ListView()
 		Me.colNew = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.colMake = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -144,20 +144,20 @@ Partial Class frmCustomerList
 		Me.CustomerToolTip.SetToolTip(Me.chkNew, "Check to make the customer a VIP.")
 		Me.chkNew.UseVisualStyleBackColor = True
 		'
-		'lvwCustomers
+		'lvwCars
 		'
-		Me.lvwCustomers.CheckBoxes = True
-		Me.lvwCustomers.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colNew, Me.colID, Me.colMake, Me.colModel, Me.colYear, Me.colPrice})
-		Me.lvwCustomers.FullRowSelect = True
-		Me.lvwCustomers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-		Me.lvwCustomers.Location = New System.Drawing.Point(2, 135)
-		Me.lvwCustomers.MultiSelect = False
-		Me.lvwCustomers.Name = "lvwCustomers"
-		Me.lvwCustomers.Size = New System.Drawing.Size(383, 246)
-		Me.lvwCustomers.TabIndex = 7
-		Me.CustomerToolTip.SetToolTip(Me.lvwCustomers, "Select a customer to modify.")
-		Me.lvwCustomers.UseCompatibleStateImageBehavior = False
-		Me.lvwCustomers.View = System.Windows.Forms.View.Details
+		Me.lvwCars.CheckBoxes = True
+		Me.lvwCars.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colNew, Me.colID, Me.colMake, Me.colModel, Me.colYear, Me.colPrice})
+		Me.lvwCars.FullRowSelect = True
+		Me.lvwCars.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+		Me.lvwCars.Location = New System.Drawing.Point(2, 135)
+		Me.lvwCars.MultiSelect = False
+		Me.lvwCars.Name = "lvwCars"
+		Me.lvwCars.Size = New System.Drawing.Size(383, 246)
+		Me.lvwCars.TabIndex = 7
+		Me.CustomerToolTip.SetToolTip(Me.lvwCars, "Select a customer to modify.")
+		Me.lvwCars.UseCompatibleStateImageBehavior = False
+		Me.lvwCars.View = System.Windows.Forms.View.Details
 		'
 		'colNew
 		'
@@ -213,7 +213,7 @@ Partial Class frmCustomerList
 		Me.lbYear.Text = "&Year:"
 		Me.lbYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
-		'frmCustomerList
+		'frmCarInventory
 		'
 		Me.AcceptButton = Me.btnEnter
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -223,7 +223,7 @@ Partial Class frmCustomerList
 		Me.Controls.Add(Me.lbYear)
 		Me.Controls.Add(Me.cmbYear)
 		Me.Controls.Add(Me.lbResult)
-		Me.Controls.Add(Me.lvwCustomers)
+		Me.Controls.Add(Me.lvwCars)
 		Me.Controls.Add(Me.chkNew)
 		Me.Controls.Add(Me.lbPrice)
 		Me.Controls.Add(Me.lbModel)
@@ -236,9 +236,9 @@ Partial Class frmCustomerList
 		Me.Controls.Add(Me.btnEnter)
 		Me.MaximizeBox = False
 		Me.MinimizeBox = False
-		Me.Name = "frmCustomerList"
+		Me.Name = "frmCarInventory"
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-		Me.Text = "Customer List"
+		Me.Text = "Car Inventory"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -254,7 +254,7 @@ Partial Class frmCustomerList
     Friend WithEvents lbModel As Label
     Friend WithEvents lbPrice As Label
     Friend WithEvents chkNew As CheckBox
-    Friend WithEvents lvwCustomers As ListView
+    Friend WithEvents lvwCars As ListView
     Friend WithEvents colID As ColumnHeader
     Friend WithEvents colModel As ColumnHeader
     Friend WithEvents colYear As ColumnHeader
