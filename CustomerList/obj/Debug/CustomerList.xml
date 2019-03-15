@@ -154,9 +154,9 @@ CustomerList
  Description:	Keeps a list of cars with information such as make, model, year, price, and if it is new
  </summary>
 </member>
-<member name="M:CustomerList.frmCarInventory.btnEnter_Click(System.Object,System.EventArgs)">
+<member name="M:CustomerList.frmCarInventory.EnterValues(System.Object,System.EventArgs)">
  <summary>
- btnEnter_Click - Validates information
+ EnterValues - Validates information
                 - If everything is valid, creates a new object from the Car class 
                 - The object is added to the carList
  </summary>
@@ -174,10 +174,10 @@ CustomerList
  </summary>
  <returns>Boolean</returns>
 </member>
-<member name="M:CustomerList.frmCarInventory.btnReset_Click(System.Object,System.EventArgs)">
+<member name="M:CustomerList.frmCarInventory.ResetValues(System.Object,System.EventArgs)">
  <summary>
  Event is declared as private because it is only accessible within the form
- The code in the btnReset_Click EventHandler will clear the form and set
+ The code in the ResetValues EventHandler will clear the form and set
  focus back to the input text box. 
  </summary>
  <param name="sender"></param>
@@ -191,17 +191,17 @@ CustomerList
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:CustomerList.frmCarInventory.lvwCars_ItemCheck(System.Object,System.Windows.Forms.ItemCheckEventArgs)">
+<member name="M:CustomerList.frmCarInventory.DisallowEdit(System.Object,System.Windows.Forms.ItemCheckEventArgs)">
  <summary>
- lvwCustomers_ItemCheck - used to prevent the user from checking the check box in the list view
+ DisallowEdit - used to prevent the user from checking the check box in the list view
                         - if it is not in edit mode
  </summary>
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:CustomerList.frmCarInventory.lvwCars_SelectedIndexChanged(System.Object,System.EventArgs)">
+<member name="M:CustomerList.frmCarInventory.CheckIndex(System.Object,System.EventArgs)">
  <summary>
- lvwCustomers_SelectedIndexChanged - when the user selected a row in the list it will populate the fields for editing
+ CheckIndex - when the user selected a row in the list it will populate the fields for editing
  </summary>
  <param name="sender"></param>
  <param name="e"></param>

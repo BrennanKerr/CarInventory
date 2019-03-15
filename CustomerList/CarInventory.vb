@@ -20,13 +20,13 @@ Public Class frmCarInventory
 	Private editMode As Boolean = False                                 '
 
 	''' <summary>
-	''' btnEnter_Click - Validates information
+	''' EnterValues - Validates information
 	'''                - If everything is valid, creates a new object from the Car class 
 	'''                - The object is added to the carList
 	''' </summary>
 	''' <param name="sender">Object</param>
 	''' <param name="e">EventArgs</param>
-	Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
+	Private Sub EnterValues(sender As Object, e As EventArgs) Handles btnEnter.Click
 
 		Dim car As Car                  ' declare a Customer class
 		Dim carItem As ListViewItem     ' declare a ListViewItem class
@@ -203,12 +203,12 @@ Public Class frmCarInventory
 
 	''' <summary>
 	''' Event is declared as private because it is only accessible within the form
-	''' The code in the btnReset_Click EventHandler will clear the form and set
+	''' The code in the ResetValues EventHandler will clear the form and set
 	''' focus back to the input text box. 
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
-	Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+	Private Sub ResetValues(sender As Object, e As EventArgs) Handles btnReset.Click
 
 		' call the rest sub routine
 		Reset()
@@ -228,12 +228,12 @@ Public Class frmCarInventory
 	End Sub
 
 	''' <summary>
-	''' lvwCustomers_ItemCheck - used to prevent the user from checking the check box in the list view
+	''' DisallowEdit - used to prevent the user from checking the check box in the list view
 	'''                        - if it is not in edit mode
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
-	Private Sub lvwCars_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles lvwCars.ItemCheck
+	Private Sub DisallowEdit(sender As Object, e As ItemCheckEventArgs) Handles lvwCars.ItemCheck
 
 		' if it is not in edit mode
 		If editMode = False Then
@@ -247,31 +247,34 @@ Public Class frmCarInventory
 	End Sub
 
 	''' <summary>
-	''' lvwCustomers_SelectedIndexChanged - when the user selected a row in the list it will populate the fields for editing
+	''' CheckIndex - when the user selected a row in the list it will populate the fields for editing
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
-	Private Sub lvwCars_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvwCars.SelectedIndexChanged
+	Private Sub CheckIndex(sender As Object, e As EventArgs) Handles lvwCars.SelectedIndexChanged
 
-		' constant that represents the index of the subitem in the list that
-		' holds the customer identification number 
-		Const identificationSubItemIndex As Integer = 1
+		' determines if a item is selected (fixes issues of crashes)
+		If lvwCars.FocusedItem IsNot Nothing Then
+			'If Not IsNothing(lvwCars.FocusedItem) Then
+			' constant that represents the index of the subitem in the list that
+			' holds the customer identification number 
+			Const identificationSubItemIndex As Integer = 1
 
-		' Get the customer identification number 
-		currentCarNumber = lvwCars.Items(lvwCars.FocusedItem.Index).SubItems(identificationSubItemIndex).Text
+			' Get the customer identification number 
+			currentCarNumber = lvwCars.Items(lvwCars.FocusedItem.Index).SubItems(identificationSubItemIndex).Text
 
-		' Use the customer identification number to get the customer from the collection object
-		Dim car As Car = CType(carList.Item(currentCarNumber), Car)
+			' Use the customer identification number to get the customer from the collection object
+			Dim car As Car = CType(carList.Item(currentCarNumber), Car)
 
-		' set the controls on the form
-		tbModel.Text = car.Model               ' get the first name and set the text box
-		cmbMakes.Text = car.Make                     ' get the title and set the combo box
-		cmbYear.Text = car.Year.ToString()
-		tbPrice.Text = car.Price.ToString()                 ' get the last name and set the text box
-		chkNew.Checked = car.NewStatus ' get the very important person status and set the combo box
+			' set the controls on the form
+			tbModel.Text = car.Model               ' get the first name and set the text box
+			cmbMakes.Text = car.Make                     ' get the title and set the combo box
+			cmbYear.Text = car.Year.ToString()
+			tbPrice.Text = car.Price.ToString()                 ' get the last name and set the text box
+			chkNew.Checked = car.NewStatus ' get the very important person status and set the combo box
 
-		lbResult.Text = car.GetSalutation()
-
+			lbResult.Text = car.GetSalutation()
+		End If
 
 	End Sub
 
