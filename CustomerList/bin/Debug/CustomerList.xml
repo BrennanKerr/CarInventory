@@ -176,32 +176,30 @@ CustomerList
 </member>
 <member name="M:CustomerList.frmCarInventory.ResetValues(System.Object,System.EventArgs)">
  <summary>
- Event is declared as private because it is only accessible within the form
- The code in the ResetValues EventHandler will clear the form and set
- focus back to the input text box. 
+ Gets called whenever the user hits the reset button.
+ Goes to the method Reset()
  </summary>
  <param name="sender"></param>
  <param name="e"></param>
 </member>
 <member name="M:CustomerList.frmCarInventory.btnExit_Click(System.Object,System.EventArgs)">
  <summary>
- Event is declared as private because it is only accessible within the form
- The code in the btnExit_Click EventHandler will close the application
+ Called whenever the user wants to exit the application
+ Closes the program
  </summary>
  <param name="sender"></param>
  <param name="e"></param>
 </member>
 <member name="M:CustomerList.frmCarInventory.DisallowEdit(System.Object,System.Windows.Forms.ItemCheckEventArgs)">
  <summary>
- DisallowEdit - used to prevent the user from checking the check box in the list view
-                        - if it is not in edit mode
+ Disallows the editing of the checkboxes if the car has not been selected
  </summary>
  <param name="sender"></param>
  <param name="e"></param>
 </member>
 <member name="M:CustomerList.frmCarInventory.CheckIndex(System.Object,System.EventArgs)">
  <summary>
- CheckIndex - when the user selected a row in the list it will populate the fields for editing
+ CheckIndex - determine which index (car) the user wants to edit
  </summary>
  <param name="sender"></param>
  <param name="e"></param>

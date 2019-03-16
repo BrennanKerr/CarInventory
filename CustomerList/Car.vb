@@ -133,6 +133,16 @@ Public Class Car
 	''' </summary>
 	''' <returns></returns>
 	Public Function GetSalutation() As String
-		Return "It Worked"
+		Dim status As String
+
+		' determines the status of the vehicle
+		If myStatus = True Then
+			status = "new"
+		Else
+			status = "old"
+		End If
+
+		' returns the string that displays all the cars information
+		Return "It Worked: A " + myYear.ToString() + " " + myMake + " " + myModel + " was added. The vehicle is " + status + " and is being sold for $" + Math.Round(Price, 2).ToString + "."
 	End Function
 End Class

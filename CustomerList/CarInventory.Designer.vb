@@ -40,7 +40,7 @@ Partial Class frmCarInventory
 		Me.colModel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.colYear = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.colPrice = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.CustomerToolTip = New System.Windows.Forms.ToolTip(Me.components)
+		Me.CarToolTip = New System.Windows.Forms.ToolTip(Me.components)
 		Me.lbResult = New System.Windows.Forms.Label()
 		Me.cmbYear = New System.Windows.Forms.ComboBox()
 		Me.lbYear = New System.Windows.Forms.Label()
@@ -51,9 +51,9 @@ Partial Class frmCarInventory
 		Me.btnEnter.Location = New System.Drawing.Point(148, 447)
 		Me.btnEnter.Name = "btnEnter"
 		Me.btnEnter.Size = New System.Drawing.Size(75, 23)
-		Me.btnEnter.TabIndex = 9
+		Me.btnEnter.TabIndex = 7
 		Me.btnEnter.Text = "&Enter"
-		Me.CustomerToolTip.SetToolTip(Me.btnEnter, "Click to add a customer.")
+		Me.CarToolTip.SetToolTip(Me.btnEnter, "Click to add the vehicle to the inventory." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+E")
 		Me.btnEnter.UseVisualStyleBackColor = True
 		'
 		'btnReset
@@ -62,9 +62,9 @@ Partial Class frmCarInventory
 		Me.btnReset.Location = New System.Drawing.Point(229, 447)
 		Me.btnReset.Name = "btnReset"
 		Me.btnReset.Size = New System.Drawing.Size(75, 23)
-		Me.btnReset.TabIndex = 10
+		Me.btnReset.TabIndex = 8
 		Me.btnReset.Text = "&Reset"
-		Me.CustomerToolTip.SetToolTip(Me.btnReset, "Click to reset the screen.")
+		Me.CarToolTip.SetToolTip(Me.btnReset, "Reset the current input." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+R")
 		Me.btnReset.UseVisualStyleBackColor = True
 		'
 		'btnExit
@@ -72,9 +72,9 @@ Partial Class frmCarInventory
 		Me.btnExit.Location = New System.Drawing.Point(310, 447)
 		Me.btnExit.Name = "btnExit"
 		Me.btnExit.Size = New System.Drawing.Size(75, 23)
-		Me.btnExit.TabIndex = 11
+		Me.btnExit.TabIndex = 9
 		Me.btnExit.Text = "E&xit"
-		Me.CustomerToolTip.SetToolTip(Me.btnExit, "Click to exit the application.")
+		Me.CarToolTip.SetToolTip(Me.btnExit, "Exit the application." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+X")
 		Me.btnExit.UseVisualStyleBackColor = True
 		'
 		'tbModel
@@ -82,27 +82,27 @@ Partial Class frmCarInventory
 		Me.tbModel.Location = New System.Drawing.Point(84, 34)
 		Me.tbModel.Name = "tbModel"
 		Me.tbModel.Size = New System.Drawing.Size(121, 20)
-		Me.tbModel.TabIndex = 3
-		Me.CustomerToolTip.SetToolTip(Me.tbModel, "Type the customer's first name here.")
+		Me.tbModel.TabIndex = 2
+		Me.CarToolTip.SetToolTip(Me.tbModel, "Enter the cars Model." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing ALT+O")
 		'
 		'tbPrice
 		'
 		Me.tbPrice.Location = New System.Drawing.Point(84, 87)
 		Me.tbPrice.Name = "tbPrice"
 		Me.tbPrice.Size = New System.Drawing.Size(121, 20)
-		Me.tbPrice.TabIndex = 5
-		Me.CustomerToolTip.SetToolTip(Me.tbPrice, "Type the customer's last name here.")
+		Me.tbPrice.TabIndex = 4
+		Me.CarToolTip.SetToolTip(Me.tbPrice, "Enter the price of the car" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be selected by pressing Alt+P")
 		'
 		'cmbMakes
 		'
 		Me.cmbMakes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cmbMakes.FormattingEnabled = True
-		Me.cmbMakes.Items.AddRange(New Object() {"Chevrolet", "Dodge", "Ford"})
+		Me.cmbMakes.Items.AddRange(New Object() {"Audi", "BMW", "Chevrolet", "Dodge", "Ford"})
 		Me.cmbMakes.Location = New System.Drawing.Point(84, 7)
 		Me.cmbMakes.Name = "cmbMakes"
 		Me.cmbMakes.Size = New System.Drawing.Size(121, 21)
 		Me.cmbMakes.TabIndex = 1
-		Me.CustomerToolTip.SetToolTip(Me.cmbMakes, "Select the customer's title.")
+		Me.CarToolTip.SetToolTip(Me.cmbMakes, "Select the vehicles make." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+A.")
 		'
 		'lbMake
 		'
@@ -138,10 +138,10 @@ Partial Class frmCarInventory
 		Me.chkNew.Location = New System.Drawing.Point(37, 110)
 		Me.chkNew.Name = "chkNew"
 		Me.chkNew.Size = New System.Drawing.Size(60, 24)
-		Me.chkNew.TabIndex = 6
+		Me.chkNew.TabIndex = 5
 		Me.chkNew.Text = "&New:"
 		Me.chkNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-		Me.CustomerToolTip.SetToolTip(Me.chkNew, "Check to make the customer a VIP.")
+		Me.CarToolTip.SetToolTip(Me.chkNew, "Check if the vehicle is new" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be selected by pressing Alt+N")
 		Me.chkNew.UseVisualStyleBackColor = True
 		'
 		'lvwCars
@@ -154,8 +154,8 @@ Partial Class frmCarInventory
 		Me.lvwCars.MultiSelect = False
 		Me.lvwCars.Name = "lvwCars"
 		Me.lvwCars.Size = New System.Drawing.Size(383, 246)
-		Me.lvwCars.TabIndex = 7
-		Me.CustomerToolTip.SetToolTip(Me.lvwCars, "Select a customer to modify.")
+		Me.lvwCars.TabIndex = 6
+		Me.CarToolTip.SetToolTip(Me.lvwCars, "Select a vehicle to modify.")
 		Me.lvwCars.UseCompatibleStateImageBehavior = False
 		Me.lvwCars.View = System.Windows.Forms.View.Details
 		'
@@ -191,18 +191,18 @@ Partial Class frmCarInventory
 		Me.lbResult.Name = "lbResult"
 		Me.lbResult.Size = New System.Drawing.Size(383, 60)
 		Me.lbResult.TabIndex = 8
-		Me.CustomerToolTip.SetToolTip(Me.lbResult, "Success or Error message will appear here.")
+		Me.CarToolTip.SetToolTip(Me.lbResult, "Messages will appear if the input was successful or" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "an error occured.")
 		'
 		'cmbYear
 		'
 		Me.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cmbYear.FormattingEnabled = True
-		Me.cmbYear.Items.AddRange(New Object() {"2000", "2001", "2002", "2003", "2004", "2005"})
+		Me.cmbYear.Items.AddRange(New Object() {"2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"})
 		Me.cmbYear.Location = New System.Drawing.Point(84, 60)
 		Me.cmbYear.Name = "cmbYear"
 		Me.cmbYear.Size = New System.Drawing.Size(121, 21)
-		Me.cmbYear.TabIndex = 13
-		Me.CustomerToolTip.SetToolTip(Me.cmbYear, "Select the customer's title.")
+		Me.cmbYear.TabIndex = 3
+		Me.CarToolTip.SetToolTip(Me.cmbYear, "Select the vehicles year." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+Y")
 		'
 		'lbYear
 		'
@@ -260,7 +260,7 @@ Partial Class frmCarInventory
     Friend WithEvents colYear As ColumnHeader
     Friend WithEvents colNew As ColumnHeader
     Friend WithEvents colMake As ColumnHeader
-    Friend WithEvents CustomerToolTip As ToolTip
+    Friend WithEvents CarToolTip As ToolTip
     Friend WithEvents lbResult As Label
 	Friend WithEvents lbYear As Label
 	Friend WithEvents cmbYear As ComboBox

@@ -19,6 +19,10 @@ Public Class frmCarInventory
 	Private currentCarNumber As String = String.Empty   ' the current car that is selected
 	Private editMode As Boolean = False                                 '
 
+	Private Sub frmCustomerList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
+
 	''' <summary>
 	''' EnterValues - Validates information
 	'''                - If everything is valid, creates a new object from the Car class 
@@ -69,6 +73,8 @@ Public Class frmCarInventory
 				car.NewStatus = chkNew.Checked
 			End If
 
+			lbResult.Text = car.GetSalutation()     ' creates a message to notify the user the car was entered successfully
+
 			' clear the items from the listview control
 			lvwCars.Items.Clear()
 
@@ -89,7 +95,7 @@ Public Class frmCarInventory
 				carItem.SubItems.Add(car.Make)
 				carItem.SubItems.Add(car.Model)
 				carItem.SubItems.Add(car.Year.ToString)
-				carItem.SubItems.Add(car.Price.ToString)
+				carItem.SubItems.Add("$" + Math.Round(car.Price, 2).ToString)
 
 				' adds the cars to the list view
 				lvwCars.Items.Add(carItem)
@@ -111,13 +117,11 @@ Public Class frmCarInventory
 	''' </summary>
 	Private Sub Reset()
 
-
 		tbModel.Text = String.Empty
 		tbPrice.Text = String.Empty
 		chkNew.Checked = False
 		cmbMakes.SelectedIndex = -1
 		cmbYear.SelectedIndex = -1
-		lbResult.Text = String.Empty
 
 		currentCarNumber = String.Empty
 
@@ -143,7 +147,7 @@ Public Class frmCarInventory
 
 		End If
 
-		' check if the model is valid
+		' checks to see if a model was entered
 		If tbModel.Text.Trim.Length = 0 Then
 
 			' If not set the error message
@@ -163,6 +167,7 @@ Public Class frmCarInventory
 			returnValue = False
 		End If
 
+		' creates a temporary variable for the price
 		Dim tempPrice As Double
 
 		' check if the price has been entered and is valid
@@ -202,9 +207,8 @@ Public Class frmCarInventory
 	End Function
 
 	''' <summary>
-	''' Event is declared as private because it is only accessible within the form
-	''' The code in the ResetValues EventHandler will clear the form and set
-	''' focus back to the input text box. 
+	''' Gets called whenever the user hits the reset button.
+	''' Goes to the method Reset()
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
@@ -215,8 +219,8 @@ Public Class frmCarInventory
 
 	End Sub
 	''' <summary>
-	''' Event is declared as private because it is only accessible within the form
-	''' The code in the btnExit_Click EventHandler will close the application
+	''' Called whenever the user wants to exit the application
+	''' Closes the program
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
@@ -228,8 +232,7 @@ Public Class frmCarInventory
 	End Sub
 
 	''' <summary>
-	''' DisallowEdit - used to prevent the user from checking the check box in the list view
-	'''                        - if it is not in edit mode
+	''' Disallows the editing of the checkboxes if the car has not been selected
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
@@ -247,7 +250,7 @@ Public Class frmCarInventory
 	End Sub
 
 	''' <summary>
-	''' CheckIndex - when the user selected a row in the list it will populate the fields for editing
+	''' CheckIndex - determine which index (car) the user wants to edit
 	''' </summary>
 	''' <param name="sender"></param>
 	''' <param name="e"></param>
@@ -255,6 +258,7 @@ Public Class frmCarInventory
 
 		' determines if a item is selected (fixes issues of crashes)
 		If lvwCars.FocusedItem IsNot Nothing Then
+
 			'If Not IsNothing(lvwCars.FocusedItem) Then
 			' constant that represents the index of the subitem in the list that
 			' holds the customer identification number 
@@ -267,19 +271,14 @@ Public Class frmCarInventory
 			Dim car As Car = CType(carList.Item(currentCarNumber), Car)
 
 			' set the controls on the form
-			tbModel.Text = car.Model               ' get the first name and set the text box
-			cmbMakes.Text = car.Make                     ' get the title and set the combo box
-			cmbYear.Text = car.Year.ToString()
-			tbPrice.Text = car.Price.ToString()                 ' get the last name and set the text box
-			chkNew.Checked = car.NewStatus ' get the very important person status and set the combo box
-
-			lbResult.Text = car.GetSalutation()
+			cmbMakes.Text = car.Make                ' gets the name of the make
+			tbModel.Text = car.Model                ' gets the name of the model
+			cmbYear.Text = car.Year.ToString()      ' gets the year of the vehicle
+			tbPrice.Text = car.Price.ToString()     ' gets the price of the vehicle
+			chkNew.Checked = car.NewStatus          ' determines if the vehicle is new
 		End If
 
 	End Sub
 
-	Private Sub frmCustomerList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-	End Sub
 End Class
 
