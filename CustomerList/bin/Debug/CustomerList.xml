@@ -84,62 +84,6 @@ CustomerList
  </summary>
  <returns></returns>
 </member>
-<member name="M:CustomerList.Customer.#ctor">
- <summary>
- Constructor - Default - creates a new customer object
- </summary>
-</member>
-<member name="M:CustomerList.Customer.#ctor(System.String,System.String,System.String,System.Boolean)">
- <summary>
- Constructor - Parameterized - creates a new customer object
- </summary>
- <param name="title"></param>
- <param name="firstName"></param>
- <param name="lastName"></param>
- <param name="veryImportantPersonStatus"></param>
-</member>
-<member name="P:CustomerList.Customer.Count">
- <summary>
- Count ReadOnly Property - Gets the number of customers that have been instantiated/created
- </summary>
- <returns>Integer</returns>
-</member>
-<member name="P:CustomerList.Customer.IdentificationNumber">
- <summary>
- IdentificationNumber ReadOnly Property - Gets a specific customers identification number
- </summary>
- <returns>Integer</returns>
-</member>
-<member name="P:CustomerList.Customer.VeryImportantPersonStatus">
- <summary>
- VeryImportantPersonStatus Property - >Gets and Sets the Very Important Person status of a customer
- </summary>
- <returns>Boolean</returns>
-</member>
-<member name="P:CustomerList.Customer.Title">
- <summary>
- Title property - Gets and Sets the title of a customer
- </summary>
- <returns>String</returns>
-</member>
-<member name="P:CustomerList.Customer.FirstName">
- <summary>
- FirstName property - Gets and Sets the first name of a customer
- </summary>
- <returns>String</returns>
-</member>
-<member name="P:CustomerList.Customer.LastName">
- <summary>
- LastName property - Gets and Sets the last name of a customer
- </summary>
- <returns>String</returns>
-</member>
-<member name="M:CustomerList.Customer.GetSalutation">
- <summary>
- GetSalutation is a function that a salutation based on the private properties within the class scope
- </summary>
- <returns>String</returns>
-</member>
 <member name="T:CustomerList.frmCarInventory">
  <summary> (Initial CustomerList) - Used as baseline
  Author Name:    Alfred Massardo

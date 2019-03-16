@@ -73,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.vb" />
-    <Compile Include="Customer.vb" />
     <Compile Include="CarInventory.vb">
       <SubType>Form</SubType>
     </Compile>
