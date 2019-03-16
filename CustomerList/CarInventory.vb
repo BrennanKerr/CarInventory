@@ -180,14 +180,16 @@ Public Class frmCarInventory
 
 		ElseIf Double.TryParse(tbPrice.Text, tempPrice) = False Then
 			' notify the user the input was not a number
-			outputMessage += "The Price is not a number!"
+			outputMessage += "The Price is not a number! You Entered: " + tbPrice.Text
 
+			tbPrice.Text = ""
 			returnValue = False
 
 		ElseIf tempPrice < 0 Then
 			' notify the user the price is less than 0
-			outputMessage += "The price is less than 0!"
+			outputMessage += "The price is less than 0! You Entered: " + tbPrice.Text
 
+			tbPrice.Text = ""
 			returnValue = False
 		End If
 

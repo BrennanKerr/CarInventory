@@ -48,7 +48,7 @@ Partial Class frmCarInventory
 		'
 		'btnEnter
 		'
-		Me.btnEnter.Location = New System.Drawing.Point(148, 447)
+		Me.btnEnter.Location = New System.Drawing.Point(148, 474)
 		Me.btnEnter.Name = "btnEnter"
 		Me.btnEnter.Size = New System.Drawing.Size(75, 23)
 		Me.btnEnter.TabIndex = 7
@@ -59,7 +59,7 @@ Partial Class frmCarInventory
 		'btnReset
 		'
 		Me.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel
-		Me.btnReset.Location = New System.Drawing.Point(229, 447)
+		Me.btnReset.Location = New System.Drawing.Point(229, 474)
 		Me.btnReset.Name = "btnReset"
 		Me.btnReset.Size = New System.Drawing.Size(75, 23)
 		Me.btnReset.TabIndex = 8
@@ -69,7 +69,7 @@ Partial Class frmCarInventory
 		'
 		'btnExit
 		'
-		Me.btnExit.Location = New System.Drawing.Point(310, 447)
+		Me.btnExit.Location = New System.Drawing.Point(310, 474)
 		Me.btnExit.Name = "btnExit"
 		Me.btnExit.Size = New System.Drawing.Size(75, 23)
 		Me.btnExit.TabIndex = 9
@@ -189,7 +189,7 @@ Partial Class frmCarInventory
 		Me.lbResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.lbResult.Location = New System.Drawing.Point(2, 384)
 		Me.lbResult.Name = "lbResult"
-		Me.lbResult.Size = New System.Drawing.Size(383, 60)
+		Me.lbResult.Size = New System.Drawing.Size(383, 87)
 		Me.lbResult.TabIndex = 8
 		Me.CarToolTip.SetToolTip(Me.lbResult, "Messages will appear if the input was successful or" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "an error occured.")
 		'
@@ -219,7 +219,7 @@ Partial Class frmCarInventory
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.CancelButton = Me.btnReset
-		Me.ClientSize = New System.Drawing.Size(388, 474)
+		Me.ClientSize = New System.Drawing.Size(388, 504)
 		Me.Controls.Add(Me.lbYear)
 		Me.Controls.Add(Me.cmbYear)
 		Me.Controls.Add(Me.lbResult)
